@@ -23,22 +23,22 @@ wild card 서비스 같은경우엔 30만원/년 이나 한다..
   $ sudo ls /etc/letsencrypt/archive/
 {% endhighlight %}
 2. 생성된 인증파일을 설치해 보자.
-```
+{% highlight text %}
 $ sudo vim /etc/httpd/conf.d/ssl.conf 
-```
+{% endhighlight %}
   위에서 생성된 파일을 잘 보고 잘 넣는다.
-```
+{% highlight conf %}
   SSLCertificateFile  /etc/letsencrypt/archive/wp.homcle.com/cert1.pem
   SSLCertificateKeyFile /etc/letsencrypt/archive/wp.homcle.com/privkey1.pem
   SSLCertificateChainFile /etc/letsencrypt/archive/wp.homcle.com/chain1.pem
-```
+{% endhighlight %}
 3. ssl을 활성화 시키자.
   [참고](http://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/SSL-on-an-instance.html)
-```
+{% highlight text %}
   $ sudo yum update -y
   $ sudo yum install -y mod24_ssl
   $ sudo service httpd restart
-```
+{% endhighlight %}
 4. 무료 ssl을 즐긴다!
   참고로 https사이트 에선 http의 그 어떤것도 부를 수가 없다.
   //yoururl.com 형식으로 작성하는 습관을
