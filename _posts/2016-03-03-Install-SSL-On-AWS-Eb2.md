@@ -7,7 +7,7 @@ title: 무료로 아마존 서버에 SSL을 설치해보자.
 wild card 서비스 같은경우엔 30만원/년 이나 한다.. 
 그런데 이걸 공짜로 가능하다!
 
-0.	요구사항
+0. 요구사항
 	AWS, EC2, Amazon OS, apache
 	아마존 ec2 콘솔에서 포트 SSH 22, HTTP 80, HTTPS 443 inbound 오픈 (당연 중요!)
 
