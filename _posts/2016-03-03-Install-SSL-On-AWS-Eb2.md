@@ -8,19 +8,19 @@ wild card 서비스 같은경우엔 30만원/년 이나 한다..
 그런데 이걸 공짜로 가능하다!
 
 0. 요구사항
-  AWS, EC2, Amazon OS, apache
-  아마존 ec2 콘솔에서 포트 SSH 22, HTTP 80, HTTPS 443 inbound 오픈 (당연 중요!)
+AWS, EC2, Amazon OS, apache
+아마존 ec2 콘솔에서 포트 SSH 22, HTTP 80, HTTPS 443 inbound 오픈 (당연 중요!)
 
 1. 인증파일을 얻어보자.
   letsencrypt에서 무료로 ssl인증을 받을 수 있다. 아직 아마존os는 자동 설치가 안되서, 인증서를 따로 받고 수동설치를 해야한다. 80번포트로 인증을 하기 때문에 기존의 httpd를 멈추고 받아야한다.
   [참고](https://letsencrypt.org/getting-started/)
 {% highlight text %}
-  $ sudo service httpd stop
-  $ git clone https://github.com/letsencrypt/letsencrypt
-  $ cd letsencrypt
-  $ ./letsencrypt-auto certonly
-  $ sudo service httpd start
-  $ sudo ls /etc/letsencrypt/archive/
+$ sudo service httpd stop
+$ git clone https://github.com/letsencrypt/letsencrypt
+$ cd letsencrypt
+$ ./letsencrypt-auto certonly
+$ sudo service httpd start
+$ sudo ls /etc/letsencrypt/archive/
 {% endhighlight %}
 2. 생성된 인증파일을 설치해 보자.
 {% highlight text %}
